@@ -42,23 +42,29 @@ func main() {
 	}
 	fmt.Printf("%d. Custom\n", len(forks)+1)
 
-	fmt.Print("Select a fork to install: ")
-	response, _ := reader.ReadString('\n')
-	choice, _ := strconv.Atoi(strings.TrimSpace(response))
-
 	var githubOwner, githubBranch string
-	if choice > 0 && choice <= len(forks) {
-		selectedFork := forks[choice-1]
-		githubOwner = selectedFork.Owner
-		githubBranch = selectedFork.Branch
-	} else {
-		fmt.Print("Enter the GitHub repository owner: ")
-		owner, _ := reader.ReadString('\n')
-		githubOwner = strings.TrimSpace(owner)
+	for {
+		fmt.Print("Select a fork to install: ")
+		response, _ := reader.ReadString('\n')
+		choice, err := strconv.Atoi(strings.TrimSpace(response))
 
-		fmt.Print("Enter the GitHub branch name: ")
-		branch, _ := reader.ReadString('\n')
-		githubBranch = strings.TrimSpace(branch)
+		if err == nil && choice > 0 && choice <= len(forks)+1 {
+			if choice <= len(forks) {
+				selectedFork := forks[choice-1]
+				githubOwner = selectedFork.Owner
+				githubBranch = selectedFork.Branch
+			} else {
+				fmt.Print("Enter the GitHub repository owner: ")
+				owner, _ := reader.ReadString('\n')
+				githubOwner = strings.TrimSpace(owner)
+
+				fmt.Print("Enter the GitHub branch name: ")
+				branch, _ := reader.ReadString('\n')
+				githubBranch = strings.TrimSpace(branch)
+			}
+			break
+		}
+		fmt.Println("Invalid selection. Please try again.")
 	}
 
 	fmt.Println("\n-----------------------------------------------------------------------")
