@@ -2,11 +2,13 @@
 
 Stuck on the NEOS setup screen? You're not alone.
 
+You get this message after "Connect to Wi-Fi":
+
 > The network "xxxx" is not connected to the internet.
 
 ![Screenshot](neos-installer-stuck.jpg)
 
-comma.ai no longer has a working endpoint for the setup tool to use to determine if the device is connected to the internet. This means that the NEOS setup screen will always show "The network 'xxxx' is not connected to the internet" even when it is.
+comma.ai no longer has a working endpoint for the setup tool to use to determine if the device is connected to the internet. This means that the NEOS setup screen after selecting a Wi-Fi network will always show "The network 'xxxx' is not connected to the internet" even when it is.
 
 This repository provides a simple, all-in-one tool to bypass the NEOS Setup screen and install openpilot on a **comma two**, **EON**, or a comma two clone device. This is **NOT** designed or needed for AGNOS devices such as the comma three.
 
