@@ -28,5 +28,10 @@ clean:
 	@echo "Cleaning up..."
 	@rm -f $(BINARY_NAME_WINDOWS) $(BINARY_NAME_MACOS) $(BINARY_NAME_LINUX)
 
+# Run the Go application for development
+run:
+	@echo "Running the application for development..."
+	@go run ./cmd/installer
+
 # A phony target to avoid conflicts with a file named 'clean'
-.PHONY: all build clean
+.PHONY: all build clean run
