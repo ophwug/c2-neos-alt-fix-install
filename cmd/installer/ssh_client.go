@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"golang.org/x/crypto/ssh"
 )
@@ -28,12 +29,22 @@ func connect(ipAddress string) (*ssh.Client, error) {
 	return client, nil
 }
 
-func executeCommand(client *ssh.Client, command string) (string, error) {
+func executeCommand(client *ssh.Client, command string, streamOutput bool) (string, error) {
 	session, err := client.NewSession()
 	if err != nil {
 		return "", fmt.Errorf("failed to create session: %v", err)
 	}
 	defer session.Close()
+
+	if streamOutput {
+		session.Stdout = os.Stdout
+		session.Stderr = os.Stderr
+		err = session.Run(command)
+		if err != nil {
+			return "", fmt.Errorf("failed to run command with streaming: %v", err)
+		}
+		return "", nil
+	}
 
 	output, err := session.CombinedOutput(command)
 	if err != nil {
