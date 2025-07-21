@@ -69,6 +69,7 @@ If you want to build the application yourself:
 1.  Clone this repository.
 2.  Make sure you have Go installed (version 1.22 or later).
 3.  Run `make` to build the Windows, macOS, and Linux executables.
+4.  Run `make run` to run the application for development.
 
 The build process is automated via GitHub Actions. Every push to the `main` branch will trigger a new build and update the "Latest Build" release.
 
@@ -76,4 +77,4 @@ The build process is automated via GitHub Actions. Every push to the `main` bran
 
 This project is a Go-based evolution of the original shell script installer created by [jyoung8607](https://github.com/jyoung8607/neos-manual-install). A big thank you for the original work and inspiration!
 
-It was mostly coded with Roo Code and Gemini Pro 2.5. 
+It was mostly coded with Roo Code and Gemini Pro 2.5.
