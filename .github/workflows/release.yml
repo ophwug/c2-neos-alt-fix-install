@@ -27,7 +27,7 @@ jobs:
         with:
           tag_name: latest
           name: Latest Build
-          body: "This is the latest automated build of the NEOS Manual Install tool."
+          body: "This is the latest automated build of the NEOS Manual Install tool. Don't mind the release date, mind the file modification date."
           files: |
             c2-neos-alt-fix-install.exe
             c2-neos-alt-fix-install-darwin
