@@ -23,12 +23,14 @@ var forks = []Fork{
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Println("Welcome to the NEOS Manual Install Helper for the comma two.")
-	fmt.Println("This tool provides a workaround to bypass the NEOS setup screen.")
+	fmt.Println("Welcome to the C2 NEOS Alternate Fix Install tool.")
+	fmt.Println("This tool bypasses a bug in the NEOS setup screen where it always")
+	fmt.Println("reports 'The network is not connected to the internet' even when it is.")
 	fmt.Println("-----------------------------------------------------------------------")
 	fmt.Println("First, ensure your comma two is on the same Wi-Fi network as this computer.")
-	fmt.Println("On your device, go to Settings -> Wi-Fi -> More Options -> Advanced.")
-	fmt.Println("You will find the IPv4 address there.")
+	fmt.Println("On your device, go to More Options.")
+	fmt.Println("Touch the triple-dot icon in the upper right corner and select Advanced.")
+	fmt.Println("Scroll down and note the IPv4 address.")
 	fmt.Println("It will likely start with 192.168.x.x, 10.x.x.x, or 172.16.x.x.")
 	fmt.Println("-----------------------------------------------------------------------")
 
