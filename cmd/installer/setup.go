@@ -29,7 +29,14 @@ func runSetup(client *ssh.Client, githubOwner, githubBranch string) error {
 		return fmt.Errorf("failed to clone openpilot: %v", err)
 	}
 
-	// 4. Create continue.sh script
+	// 4. Patch neos.json for alternate update server
+	fmt.Println("Patching neos.json for alternate update server...")
+	patchCmd := "sed -i 's|commadist.azureedge.net/neosupdate|op-archive.mindflakes.com/neos20|g' /data/openpilot/selfdrive/hardware/eon/neos.json"
+	if _, err := executeCommand(client, patchCmd, false); err != nil {
+		return fmt.Errorf("failed to patch neos.json: %v", err)
+	}
+
+	// 5. Create continue.sh script
 	fmt.Println("Creating continue.sh script...")
 	continueScript := `#!/usr/bin/bash\n\ncd /data/openpilot\n./launch_openpilot.sh\n`
 	createScriptCmd := fmt.Sprintf(`echo $'%s' > /data/data/com.termux/files/continue.sh`, continueScript)
@@ -37,13 +44,13 @@ func runSetup(client *ssh.Client, githubOwner, githubBranch string) error {
 		return fmt.Errorf("failed to create continue.sh: %v", err)
 	}
 
-	// 5. Make continue.sh executable
+	// 6. Make continue.sh executable
 	fmt.Println("Making continue.sh executable...")
 	if _, err := executeCommand(client, "chmod +x /data/data/com.termux/files/continue.sh", false); err != nil {
 		return fmt.Errorf("failed to make continue.sh executable: %v", err)
 	}
 
-	// 6. Reboot the device
+	// 7. Reboot the device
 	fmt.Println("Setup complete. Rebooting device...")
 	if _, err := executeCommand(client, "reboot", false); err != nil {
 		// The reboot command might close the connection before a response is received.
