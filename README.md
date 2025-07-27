@@ -62,6 +62,21 @@ Upon running the installer, you will be prompted to select a fork of openpilot t
         ```
     *   The application will then guide you through the rest of the process.
 
+## Device Recovery
+
+If you install software that causes your device to fail to boot, you can perform a system reset to restore it.
+
+1.  **Enter Recovery Mode**
+    *   With the device off but plugged in, press and hold the **Volume Down + Power** buttons simultaneously until the device boots into Recovery Mode.
+    *   **Note:** The touchscreen will not work in Recovery Mode.
+
+2.  **Perform a Reset**
+    *   In Recovery Mode, you can choose to perform a **System Reset** or a **Factory Reset**. A system reset is usually sufficient.
+    *   Use the **Volume Up** and **Volume Down** buttons to navigate the menu and the **Power** button to confirm your selection.
+
+3.  **Reboot**
+    *   After the reset is complete, unplug the device and then plug it back in to power it on.
+
 ## For Developers
 
 If you want to build the application yourself:
