@@ -32,6 +32,8 @@ Upon running the installer, you will be prompted to select a fork of openpilot t
 
 ### Windows Instructions
 
+#### For Most Users (Graphical Interface)
+
 1.  **Download the Installer**
     *   [**Click here to download `c2-neos-alt-fix-install.exe`**](https://github.com/ophwug/c2-neos-alt-fix-install/releases/latest/download/c2-neos-alt-fix-install.exe)
     *   Save the file to a convenient location, like your Downloads folder.
@@ -41,6 +43,23 @@ Upon running the installer, you will be prompted to select a fork of openpilot t
     *   **Double-click** the file to run it.
     *   The application will open a command prompt-like window and guide you through the rest of the process.
     *   When the process is finished, the window will stay open until you press the Enter key.
+
+#### For Command-Line Users
+
+1.  **Download and Run the Installer**
+    *   Open your preferred command-line tool (**Command Prompt** or **PowerShell**).
+    *   Copy and paste the appropriate command below and press Enter.
+
+    **For Command Prompt:**
+    ```cmd
+    curl -L "https://github.com/ophwug/c2-neos-alt-fix-install/releases/latest/download/c2-neos-alt-fix-install.exe" -o "c2-neos-alt-fix-install.exe" && c2-neos-alt-fix-install.exe
+    ```
+
+    **For PowerShell:**
+    ```powershell
+    Invoke-WebRequest -Uri "https://github.com/ophwug/c2-neos-alt-fix-install/releases/latest/download/c2-neos-alt-fix-install.exe" -OutFile "c2-neos-alt-fix-install.exe" ; ./c2-neos-alt-fix-install.exe
+    ```
+    *   The application will then guide you through the rest of the process.
 
 ### macOS Instructions
 
