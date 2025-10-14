@@ -15,7 +15,7 @@ type Fork struct {
 }
 
 var forks = []Fork{
-	{Name: "Official comma.ai (release2 branch - latest official release)", Owner: "commaai", Branch: "release2"},
+	{Name: "comma.ai Stock 0.8.13 (release2 branch)", Owner: "commaai", Branch: "release2"},
 	{Name: "legacypilot (recommended for \"current\" use by Mr. One)", Owner: "dragonpilot-community", Branch: "d2"},
 	{Name: "dragonpilot (not as stable/enthusiasts)", Owner: "dragonpilot-community", Branch: "r2"},
 }
