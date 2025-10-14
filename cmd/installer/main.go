@@ -15,7 +15,7 @@ type Fork struct {
 }
 
 var forks = []Fork{
-	{Name: "comma/Stock (generally not recommended)", Owner: "commaai", Branch: "release2"},
+	{Name: "comma.ai Stock 0.8.13 (release2 branch)", Owner: "commaai", Branch: "release2"},
 	{Name: "legacypilot (recommended for \"current\" use by Mr. One)", Owner: "dragonpilot-community", Branch: "d2"},
 	{Name: "dragonpilot (not as stable/enthusiasts)", Owner: "dragonpilot-community", Branch: "r2"},
 }
@@ -56,6 +56,8 @@ func main() {
 				githubOwner = selectedFork.Owner
 				githubBranch = selectedFork.Branch
 			} else {
+				fmt.Println("\nNote: Custom option requires a valid branch name (not a tag or version number).")
+				fmt.Println("For official comma.ai releases, use option 1 instead.")
 				fmt.Print("Enter the GitHub repository owner: ")
 				owner, _ := reader.ReadString('\n')
 				githubOwner = strings.TrimSpace(owner)
