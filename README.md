@@ -48,6 +48,8 @@ Upon running the installer, you will be prompted to select a fork of openpilot t
 
 #### For Command-Line Users
 
+This alternative launch method may be useful if this tool crashes for some reason and error messages are needed. 
+
 1.  **Download and Run the Installer**
     *   Open your preferred command-line tool (**Command Prompt** or **PowerShell**).
     *   Copy and paste the appropriate command below and press Enter.
