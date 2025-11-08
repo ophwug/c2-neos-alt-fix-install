@@ -10,7 +10,7 @@ You get this message after "Connect to Wi-Fi":
 
 comma.ai no longer has a working endpoint for the setup tool to use to determine if the device is connected to the internet. This means that the NEOS setup screen after selecting a Wi-Fi network will always show "The network 'xxxx' is not connected to the internet" even when it is.
 
-This repository provides a simple, all-in-one tool to bypass the NEOS Setup screen and install openpilot on a **comma two**, **EON**, or a comma two clone device. This is **NOT** designed or needed for AGNOS devices such as the comma three.
+This repository provides a simple, all-in-one tool to bypass the NEOS Setup screen and install openpilot on a **comma two**, or a comma two clone device. This is **NOT** designed or needed for AGNOS devices such as the comma three.
 
 If you have other comma two issues or want to contribute documentation and wisdom, please check out the [ophwug/docs repo](https://github.com/ophwug/docs?tab=readme-ov-file#common-to-all-comma-two-family-devices).
 
