@@ -75,6 +75,20 @@ This alternative launch method may be useful if this tool crashes for some reaso
         ```
     *   The application will then guide you through the rest of the process.
 
+2.  **If macOS Blocks the Unsigned Binary**
+    *   macOS may prevent the unsigned binary from running with an error like "Apple could not verify [binary] is free of malware."
+    *   To allow Terminal to run unsigned binaries, add Terminal as a Developer Tool:
+        1.  Open **System Settings**
+        2.  Search for **"developer"**
+        3.  Click **"Allow applications to use developer tools"** in the sidebar
+        4.  If Terminal is not already listed, click the **+** button and search for **Terminal** to add it
+        5.  Ensure the toggle next to Terminal is **enabled**
+        6.  Restart Terminal and run the installer again:
+            ```bash
+            ./c2-neos-alt-fix-install-darwin
+            ```
+    *   For more detailed information with screenshots, see: [https://donatstudios.com/mac-terminal-run-unsigned-binaries](https://donatstudios.com/mac-terminal-run-unsigned-binaries)
+
 ### Linux Instructions
 
 1.  **Run the Installer**
