@@ -75,17 +75,19 @@ This alternative launch method may be useful if this tool crashes for some reaso
         ```
     *   The application will then guide you through the rest of the process.
 
-2.  **If macOS Blocks the Binary (Unsigned Binary Warning)**
-    *   macOS may prevent the unsigned binary from running with an error like "cannot be opened because the developer cannot be verified."
-    *   This happens because macOS marks downloaded files with a quarantine attribute. To allow the binary to run, remove this attribute:
-        ```bash
-        xattr -d com.apple.quarantine c2-neos-alt-fix-install-darwin
-        ```
-    *   Then run the installer again:
-        ```bash
-        ./c2-neos-alt-fix-install-darwin
-        ```
-    *   For more detailed information about running unsigned binaries in Terminal on macOS, see: [https://donatstudios.com/mac-terminal-run-unsigned-binaries](https://donatstudios.com/mac-terminal-run-unsigned-binaries)
+2.  **If macOS Blocks the Unsigned Binary**
+    *   macOS may prevent the unsigned binary from running with an error like "Apple could not verify [binary] is free of malware."
+    *   To allow Terminal to run unsigned binaries, add Terminal as a Developer Tool:
+        1.  Open **System Settings**
+        2.  Search for **"developer"**
+        3.  Click **"Allow applications to use developer tools"** in the sidebar
+        4.  If Terminal is not already listed, click the **+** button and search for **Terminal** to add it
+        5.  Ensure the toggle next to Terminal is **enabled**
+        6.  Restart Terminal and run the installer again:
+            ```bash
+            ./c2-neos-alt-fix-install-darwin
+            ```
+    *   For more detailed information with screenshots, see: [https://donatstudios.com/mac-terminal-run-unsigned-binaries](https://donatstudios.com/mac-terminal-run-unsigned-binaries)
 
 ### Linux Instructions
 
