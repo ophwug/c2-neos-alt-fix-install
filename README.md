@@ -67,6 +67,27 @@ This alternative launch method may be useful if this tool crashes for some reaso
 
 ### macOS Instructions
 
+⚠️ **IMPORTANT: Network Access Permission**
+
+If you recently installed or reinstalled your terminal application (Terminal, iTerm2, etc.), macOS may have asked you to grant network access permission. **If you accidentally denied this permission, all network commands in your terminal will fail, including this installer.**
+
+**Symptoms of missing network permission:**
+- `curl`, `ssh`, `ping`, and other network commands fail with errors like "No route to host" or connection timeouts
+- The same commands work in other apps like Safari or a different terminal app
+- You may see errors about not being able to connect to the device
+
+**To check and grant network permission:**
+1. Open **System Settings** (or **System Preferences** on older macOS versions)
+2. Go to **Privacy & Security** → **Local Network** (or search for "network" in settings)
+3. Find your terminal application in the list (Terminal, iTerm2, etc.)
+4. Ensure the toggle next to it is **enabled**
+5. If your terminal app is not listed, try restarting it - macOS should prompt you for permission
+6. After granting permission, restart your terminal and try again
+
+For more details, see: https://gitlab.com/gnachman/iterm2/-/issues/12071
+
+---
+
 1.  **Run the Installer**
     *   Open the **Terminal** application on your Mac.
     *   Copy and paste the following command into the Terminal and press Enter. This will download, make executable, and run the installer in one step.
