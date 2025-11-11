@@ -81,6 +81,8 @@ func main() {
 	client, err := connect(ipAddress)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
+		printNetworkPermissionWarning()
+		waitForExit()
 		return
 	}
 	defer client.Close()
