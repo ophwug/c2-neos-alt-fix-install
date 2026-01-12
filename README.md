@@ -12,6 +12,8 @@ comma.ai no longer has a working endpoint for the setup tool to use to determine
 
 This repository provides a simple, all-in-one tool to bypass the NEOS Setup screen and install openpilot on a **comma two**, or a comma two clone device. This is **NOT** designed or needed for AGNOS devices such as the comma three.
 
+Note that it also patches the target installation of openpilot to point to a rehosted OS image that comma no longer hosts.
+
 If you have other comma two issues or want to contribute documentation and wisdom, please check out the [ophwug/docs repo](https://github.com/ophwug/docs?tab=readme-ov-file#common-to-all-comma-two-family-devices).
 
 ## Usage
