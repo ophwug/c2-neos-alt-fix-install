@@ -24,7 +24,7 @@ func runSetup(client *ssh.Client, githubOwner, githubBranch string) error {
 
 	// 3. Clone openpilot repository
 	fmt.Println("Cloning openpilot repository...")
-	cloneCmd := fmt.Sprintf("git clone https://github.com/%s/openpilot.git openpilot -b %s --recurse-submodules --depth 1", githubOwner, githubBranch)
+	cloneCmd := fmt.Sprintf("git -c http.sslVerify=false clone https://github.com/%s/openpilot.git openpilot -b %s --recurse-submodules --depth 1", githubOwner, githubBranch)
 	if _, err := executeCommand(client, "cd /data && "+cloneCmd, true); err != nil {
 		return fmt.Errorf("failed to clone openpilot: %v", err)
 	}
